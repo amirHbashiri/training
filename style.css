@@ -1,0 +1,215 @@
+*{
+    border:0;
+    margin:0;
+}
+
+body{
+    max-height: 100vh;
+    height: 100vh;
+    text-align: center;
+    background:rgb(75, 71, 71);
+    display:grid;
+    grid-template-columns: minmax(75%, 1fr) minmax(25%, 400px);
+    grid-template-rows: 20px 20px minmax(50px, 130px) 5vh minmax(200px, 1fr);
+    grid-template-areas: 
+    "calb but"
+    "sta hism"
+    "result hism"
+    "mbut hism"
+    "buts hism"
+    ;   
+}
+
+.mem{
+    grid-area: mem;
+    padding-right: 180px;
+}
+
+.his{
+    grid-area:hs;
+    border-bottom:2px solid blue;
+    padding-top: 0;
+    padding-right: 30px;
+}
+
+.under{
+    grid-area: un;
+    padding-right:180px;
+    padding-top: 15px;
+}
+
+.cont{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.hismem{
+    grid-area: hism;
+}
+
+.topbtn{
+    text-align: right;
+    background-color: grey;
+}
+.calbut{
+    display:flex;
+    background-color: grey;
+    grid-area: calb;   
+}
+
+.buts{
+    display:flex;
+    grid-area: but;
+    text-align: right;
+    background-color: grey;
+}
+
+.standard{
+    grid-area: sta;
+    text-align: left;
+}
+
+.result{
+    grid-area: result; 
+    background-color:gray;
+    text-align: right;
+}
+
+.mbuts{
+    grid-area: mbut;
+    display:grid;
+    background-color:red;
+    grid-gap: 10px;
+    margin: 5px 0;
+    grid-template-columns:repeat(5,40px);
+    grid-template-rows:repeat(1,20px);
+    grid-template-areas: 
+    "mc mr mp mn ms";
+    
+}
+
+.m{
+    border:2px solid black;
+}
+.mc{
+    grid-area:mc;
+}
+
+.mr{
+    grid-area:mr;
+}
+
+.mp{
+    grid-area:mp;
+}
+
+.mn{
+    grid-area:mn;
+}
+
+.ms{
+    grid-area:ms;
+}
+
+.calculator{
+    grid-area: buts;
+    grid-gap: 2px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows:repeat(5, 1fr);
+    grid-template-areas: 
+    "percent ce c del tgh"
+    "radical n7 n8 n9 zarb"
+    "t2 n4 n5 n6 minus"
+    "t3 n1 n2 n3 plus"
+    "ox minusplus n0 dt equal"
+    ;
+}
+.calculator>*{
+    background:gray;
+}
+.n0{
+    grid-area: n0;
+}
+.n1{
+    grid-area:n1;
+}
+.n2{
+    grid-area:n2;
+}
+.n3{
+    grid-area:n3;
+}
+.n4{
+    grid-area:n4;
+}
+.n5{
+    grid-area:n5;
+}
+.n6{
+    grid-area:n6;
+}
+.n7{
+    grid-area:n7;
+}
+.n8{
+    grid-area:n8;
+}
+.n9{
+    grid-area:n9;
+}
+.taghsim{
+    grid-area:tgh;
+}
+.plus{
+    grid-area:plus;
+}
+.minus{
+    grid-area:minus;
+}
+.multiple{
+    grid-area:zarb;
+}
+.percent{
+    grid-area:percent;
+}
+.minusplus{
+    grid-area:minusplus;
+}
+.radical{
+    grid-area:radical;
+}
+.dot{
+    grid-area:dt;
+}
+.C{
+    grid-area:c;
+}
+.CE{
+    grid-area:ce;
+}
+.equal{
+    grid-area:equal;
+}
+.tavan2{
+    grid-area:t2;
+}
+.tavan3{
+    grid-area:t3;
+}
+.del{
+    grid-area:del;
+}
+.oneonx{
+    grid-area:ox;
+}
+
+.n0:hover{
+    background-color: blanchedalmond;
+}
+
+
+/*.calculator:hover > div {
+    background-color: green;
+}
+*/

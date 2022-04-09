@@ -1,0 +1,472 @@
+:root{
+    --color-primary: #e6e6e6;
+    --color-hover: #d1d1d1;
+    --clolor-btn-num: #fafafa;
+    --color-btn-other: #f0f0f0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--color-primary);
+}
+
+/* the main grid (container) and media queries to make the most small size of the wiew*/
+#main-container{
+    height: 100vh;
+    width: 100vw;
+    min-width: 440px;
+    min-height: 410px;
+    display: grid;
+    grid-template-columns: 77% 23%;
+    grid-template-rows: 5% 6% 16% 5% 68%;
+    grid-template-areas: 
+    'head head'
+    'stan his'
+    'res his'
+    'mb his'
+    'buttons his'
+    ;  
+}
+
+@media(max-width:760px){
+    #main-container{
+        height: 100vh;
+        width: 100vw;
+        min-width: 440px;
+        min-height: 410px;
+        display: grid;
+        grid-template-columns: 70% 30%;
+        grid-template-rows: 5% 6% 16% 5% 68%;
+        grid-template-areas: 
+        'head head'
+        'stan his'
+        'res his'
+        'mb his'
+        'buttons his'
+        ;  
+    }
+}
+
+@media(max-width:570px){
+    #main-container{
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 5% 5% 16% 5% 69%;
+        grid-template-areas: 
+        'head head'
+        'stan his'
+        'res his'
+        'mb his'
+        'buttons his'
+        ;  
+    }
+
+    #history{
+        margin-right: 30px;
+    }
+
+    #result{
+        padding-top: 10px;
+        font-size: 50px;
+        font-weight: 500px;
+    }
+}
+
+/* the header part and the buttons of the main window*/
+#header{
+    grid-area: head;
+}
+
+.headcont{
+    background: var(--color-primary);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.head{
+    font-size: 11px;
+    margin: 3px;
+}
+
+.cont{ 
+    display: flex;
+    flex-direction: row;
+}
+
+.cont .close{
+    color: gray;
+    width: 30px;
+    height: 30px;
+}
+
+.cont .close:hover{
+    background: red;
+    color: black;
+    cursor: pointer;
+}
+
+.cont .underline{
+    color: gray;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+.cont .underline:hover{
+    background: var(--color-btn-other);
+    cursor: pointer;
+    color: #111;
+    background: #f4f4f4;
+}
+
+.cont .window{
+    color: gray;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+}
+
+.cont .window:hover{
+    color: #111;
+    background: #f4f4f4;
+    cursor: pointer;
+}
+
+/* Standard and hamburger and some other options */
+
+#stand{
+    grid-area: stan;
+}
+
+#contstand{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+}
+
+.hamburger{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 25px;
+    font-size: 30px;
+    font-weight: 100;
+    left: 0px;
+    top: -10px;
+}
+
+.hamtext{
+    height: 30px;
+}
+
+#contstand .hamtext:hover{
+    background: silver;
+    color: #111;
+}
+
+#contstand .st{
+    margin-left: 10px;
+}
+
+#contstand .stay {
+    margin-left: 10px;
+    text-align: center;
+    height: 30px;
+    width: 30px;
+}
+
+#contstand .stay:hover{
+    border: 1px solid silver;
+    background-color: #d1d1d1;
+}
+
+/* Hitory and Memory Part */
+
+#hm{
+    grid-area: his;
+}
+
+.history{
+    display: flex;
+    flex-direction: row;
+}
+
+#history{   
+    border-bottom: 2px skyblue solid;
+    font-size: 15px;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+#memory{
+    margin-left: 5px;
+    padding-left: 5px;
+    margin-right: 5px;
+    padding-right: 5px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#underline{
+    font-size: 14px;
+    margin-top: 25px;
+    margin-right: 5px;
+    padding-right: 5px;
+}
+
+#conthm{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+/* Result Part */
+#result-cont{
+    grid-area: res;
+}
+
+#result{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: end;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+/* M bottons under the result container */
+#mbuts{
+    grid-area: mb;
+}
+
+#mbots{
+    background-color: var(--color-primary);
+    display: flex;
+    flex-direction: row;
+    max-width: 420px;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+}
+
+#mbots div{
+    font-size: 12px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin-right: 2px;
+    justify-content: center;
+    align-items: center;
+}
+
+#mbots .mss:hover
+,.mns:hover
+,.mpl:hover{border: .5px solid gray;}
+
+#mbots .mc,.mr{
+    border: none;
+    color: #818181;
+}
+
+#mbots .mc:hover
+,.mr:hover{border: .5px solid gainsboro;}
+
+/* mainbotts grid */
+
+.mainbots{
+    grid-area: buttons;
+    display: grid;  
+    grid-gap: 3px;
+    height: 100%;
+    width: 100%;
+    background: var(--color-primary);
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(6,1fr);
+    grid-template-areas: 
+    'per ec cc delt'
+    'onx t2 radic tgh'
+    'seven eight nine multi'
+    'four five six tafrigh'
+    'one two three jam'
+    'jata zero dott ms'
+    ;
+}
+
+.mainbots div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* the color of buttons and the hover of them(main buttons) */
+
+.percent{
+    grid-area: per;
+}
+
+.mainbots .percent:hover{background: var(--color-hover);}
+
+.ce{
+    grid-area: ec;
+}
+
+.mainbots .ce:hover{background: var(--color-hover);}
+
+.c{
+    grid-area: cc;
+}
+
+.mainbots .c:hover{background: var(--color-hover);}
+
+.del{
+    grid-area: delt;
+}
+
+.mainbots .del:hover{background: var(--color-hover);}
+
+.oneonx{
+    grid-area: onx;
+}
+
+.mainbots .oneonx:hover{background: var(--color-hover);}
+
+.tavan2{
+    grid-area: t2;
+}
+
+.mainbots .tavan2:hover{background: var(--color-hover);}
+
+.rad2{
+    grid-area: radic;
+}
+
+.mainbots .rad2:hover{background: var(--color-hover);}
+
+.taghsim{
+    grid-area: tgh;
+}
+
+.mainbots .taghsim:hover{background: var(--color-hover);}
+
+.no7{
+    grid-area: seven;
+}
+
+.mainbots .no7:hover{background: var(--color-hover);}
+
+.no8{
+    grid-area: eight;
+}
+
+.mainbots .no8:hover{background: var(--color-hover);}
+
+.no9{
+    grid-area: nine;
+}
+
+.mainbots .no9:hover{background: var(--color-hover);}
+
+.multiple{
+    grid-area: multi;
+}
+
+.mainbots .multiple:hover{background: var(--color-hover);}
+
+.no4{
+    grid-area: four;
+}
+
+.mainbots .no4:hover{background: var(--color-hover);}
+
+.no5{
+    grid-area: five;
+}
+
+.mainbots .no5:hover{background: var(--color-hover);}
+
+.no6{
+    grid-area: six;
+}
+
+.mainbots .no6:hover{background: var(--color-hover);}
+
+.minus{
+    grid-area: tafrigh;
+}
+
+.mainbots .minus:hover{background: var(--color-hover);}
+
+.no1{
+    grid-area: one;
+}
+
+.mainbots .no1:hover{background: var(--color-hover);}
+
+.no2{
+    grid-area: two;
+}
+
+.mainbots .no2:hover{background: var(--color-hover);}
+
+.no3{
+    grid-area: three;
+}
+
+.mainbots .no3:hover{background: var(--color-hover);}
+
+.plus{
+    grid-area: jam;
+}
+
+.mainbots .plus:hover{background: var(--color-hover);}
+
+.pm{
+    grid-area: jata;
+}
+
+.mainbots .pm:hover{background: var(--color-hover);}
+
+.no0{
+    grid-area: zero;
+}
+
+.mainbots .no0:hover{background: var(--color-hover);}
+
+.dot{
+    grid-area: dott;
+}
+
+.mainbots .dot:hover{background: var(--color-hover);}
+
+.equal{
+    grid-area: ms;
+    background: skyblue;
+}
+
+.mainbots .equal:hover{background: var(--color-hover);}
+
+.mainbots .part1{
+    background: var(--clolor-btn-num);
+}
+
+.mainbots .part2{
+    background: var(--color-btn-other);
+}
