@@ -23,10 +23,10 @@ html,body{
 #main-container{
     height: 100vh;
     width: 100vw;
-    min-width: 440px;
+    min-width: 470px;
     min-height: 410px;
     display: grid;
-    grid-template-columns: 77% 23%;
+    grid-template-columns: 74% 26%;
     grid-template-rows: 5% 6% 16% 5% 68%;
     grid-template-areas: 
     'head head'
@@ -34,53 +34,7 @@ html,body{
     'res his'
     'mb his'
     'buttons his'
-    ;  
-}
-
-@media(max-width:760px){
-    #main-container{
-        height: 100vh;
-        width: 100vw;
-        min-width: 440px;
-        min-height: 410px;
-        display: grid;
-        grid-template-columns: 70% 30%;
-        grid-template-rows: 5% 6% 16% 5% 68%;
-        grid-template-areas: 
-        'head head'
-        'stan his'
-        'res his'
-        'mb his'
-        'buttons his'
-        ;  
-    }
-}
-
-@media(max-width:570px){
-    #main-container{
-        height: 100vh;
-        width: 100vw;
-        display: grid;
-        grid-template-columns: 60% 40%;
-        grid-template-rows: 5% 5% 16% 5% 69%;
-        grid-template-areas: 
-        'head head'
-        'stan his'
-        'res his'
-        'mb his'
-        'buttons his'
-        ;  
-    }
-
-    #history{
-        margin-right: 30px;
-    }
-
-    #result{
-        padding-top: 10px;
-        font-size: 50px;
-        font-weight: 500px;
-    }
+    ;
 }
 
 /* the header part and the buttons of the main window*/
@@ -116,7 +70,7 @@ html,body{
 
 .cont .close:hover{
     background: red;
-    color: black;
+    color: white;
     cursor: pointer;
 }
 
@@ -130,7 +84,7 @@ html,body{
 .cont .underline:hover{
     background: var(--color-btn-other);
     cursor: pointer;
-    color: #111;
+    color: black;
     background: #f4f4f4;
 }
 
@@ -142,7 +96,7 @@ html,body{
 }
 
 .cont .window:hover{
-    color: #111;
+    color: black;
     background: #f4f4f4;
     cursor: pointer;
 }
@@ -156,6 +110,7 @@ html,body{
 #contstand{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
     font-size: 20px;
@@ -177,7 +132,13 @@ html,body{
     height: 30px;
 }
 
+.stanst{
+    display: flex;
+    flex-direction: row;
+}
+
 #contstand .hamtext:hover{
+    cursor:pointer;
     background: silver;
     color: #111;
 }
@@ -194,14 +155,27 @@ html,body{
 }
 
 #contstand .stay:hover{
+    cursor:pointer;
     border: 1px solid silver;
     background-color: #d1d1d1;
+}
+
+.clockbt{
+    display: none;
+}
+
+.clock-icon{
+    background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABnUlEQVRIid3Vv2oVURAG8N/1JmlCLCzuKwgaBAst/YOiIGosjIWpA4oIGrS1EgtBC32FNHkAnyCIRQQxicFobgSx0ioo/gHNtdhZ7rKeu7sXsYgfHA57vpn5zs4Mc/jfMYqLmMdrbOEbuljADMaaBuviaOF7Cm/Qq1kfMN1EoIcvOIa7hQCbuInDGEcH+3EFLwp2j9CuE+jhV+w/cRsjFT4tzMrS1sPjJgL5upOweYrFxPkRfA2/gekqC+TpStmkMKtfk2ThFxMi3SEEWvo1uTzoL+pQJQBXg1/4VwL7gl//W4HOAH5P8J9S5BM8U93LSxFgZYDIRPCfU85vg5ysEOhE8Fxkd4k/GNzL/GBXgXwee3FclPERJ7AaF9lb4o/Hvppyng715ZJwChM4VDprYy1inE05jeJ9GFyrEUhhLnzfqajj+TD6jpNDBD8jm0fbOFVn/KAgcl11utqySfsjfO43uU0LD/V7fg03ZEUdl3XOAdzCq4LdvSbBi7iADX/Op/LawOlhg+cYwSXZk7kum7BbsjacxzlDPJk7E78BiCOJMrCO34wAAAAASUVORK5CYII=") center center/cover;
+    background-size: 25px 25px;
+    width: 25px;
+    height: 25px;
 }
 
 /* Hitory and Memory Part */
 
 #hm{
     grid-area: his;
+
 }
 
 .history{
@@ -233,9 +207,10 @@ html,body{
 }
 
 #conthm{
-    display: flex;
-    flex-direction: column;
+    height:100%;
     margin-left: 10px;
+    min-width: 150px;
+    max-width: 23%;
 }
 
 /* Result Part */
@@ -248,7 +223,7 @@ html,body{
     width: 100%;
     height: 100%;
     justify-content: end;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 500;
 }
 
@@ -268,7 +243,7 @@ html,body{
     text-align: center;
 }
 
-#mbots div{
+.mbt{
     font-size: 12px;
     width: 100%;
     height: 100%;
@@ -278,11 +253,15 @@ html,body{
     align-items: center;
 }
 
+.mfsh{
+    display: none;
+}
+
 #mbots .mss:hover
 ,.mns:hover
 ,.mpl:hover{border: .5px solid gray;}
 
-#mbots .mc,.mr{
+#mbots .mc,.mr,.mfsh{
     border: none;
     color: #818181;
 }
@@ -298,6 +277,8 @@ html,body{
     grid-gap: 3px;
     height: 100%;
     width: 100%;
+    font-weight: 700;
+    font-size: bold;
     background: var(--color-primary);
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(6,1fr);
@@ -362,6 +343,7 @@ html,body{
 
 .taghsim{
     grid-area: tgh;
+    font-size: 25px;
 }
 
 .mainbots .taghsim:hover{background: var(--color-hover);}
@@ -410,6 +392,7 @@ html,body{
 
 .minus{
     grid-area: tafrigh;
+    font-size: 35px;
 }
 
 .mainbots .minus:hover{background: var(--color-hover);}
@@ -434,6 +417,7 @@ html,body{
 
 .plus{
     grid-area: jam;
+    font-size: 25px;
 }
 
 .mainbots .plus:hover{background: var(--color-hover);}
@@ -459,6 +443,7 @@ html,body{
 .equal{
     grid-area: ms;
     background: skyblue;
+    font-size: 30px;
 }
 
 .mainbots .equal:hover{background: var(--color-hover);}
@@ -469,4 +454,115 @@ html,body{
 
 .mainbots .part2{
     background: var(--color-btn-other);
+}
+
+
+/* media queries are down here!*/
+
+@media screen and (min-width:740px) and (max-width:1023px){
+    #main-container{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 77% 23%;
+    grid-template-rows: 5% 6% 16% 5% 68%;
+    grid-template-areas: 
+    'head head'
+    'stan his'
+    'res his'
+    'mb his'
+    'buttons his'
+    ;
+}
+
+    .mainbots{
+        grid-area: buttons;
+        display: grid;  
+        grid-gap: 3px;
+        height: 100%;
+        width: 100%;
+        font-weight: 700;
+        font-size: bold;
+        background: var(--color-primary);
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(6,1fr);
+        grid-template-areas: 
+        'per ec cc delt'
+        'onx t2 radic tgh'
+        'seven eight nine multi'
+        'four five six tafrigh'
+        'one two three jam'
+        'jata zero dott ms'
+        ;
+    } 
+    
+}
+
+@media screen and (min-width:740px) {
+    #main-container{
+        grid-template-columns: 1fr 320px;
+    }
+}  
+
+@media screen and (max-width:740px){
+    #main-container{        
+        grid-template-columns: 1fr 43%;
+    }
+}
+
+@media screen and (max-width:500px){
+    #hm{
+        display: none;
+    }
+    #main-container{
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 5% 6% 16% 5% 68%;
+        grid-template-areas: 
+        'head'
+        'stan'
+        'res'
+        'mb'
+        'buttons'
+        ;  
+    }
+
+    #result{
+        padding-right: 8px;
+        bottom: -5px;
+        font-size: 30px;
+    }
+
+    .close:hover{
+        height: 20px;
+        justify-content: center;
+    }
+
+    .window:hover{
+        height: 20px;
+    }
+
+    .underline:hover{
+        height: 20px;
+    }
+
+    .clockbt{
+        display: flex;
+        cursor: pointer;
+        padding: 0px 2px 4px 2px;
+    }
+    .clockbt:hover{
+        border: 1px solid silver;
+        background: var(--color-hover);
+    }
+    #mbots{
+        width: 100vw;
+        max-width: unset;
+    }
+    .mfsh{
+        display: flex;
+    }
+    
 }
