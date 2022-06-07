@@ -165,10 +165,8 @@ html,body{
 }
 
 .clock-icon{
-    background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABnUlEQVRIid3Vv2oVURAG8N/1JmlCLCzuKwgaBAst/YOiIGosjIWpA4oIGrS1EgtBC32FNHkAnyCIRQQxicFobgSx0ioo/gHNtdhZ7rKeu7sXsYgfHA57vpn5zs4Mc/jfMYqLmMdrbOEbuljADMaaBuviaOF7Cm/Qq1kfMN1EoIcvOIa7hQCbuInDGEcH+3EFLwp2j9CuE+jhV+w/cRsjFT4tzMrS1sPjJgL5upOweYrFxPkRfA2/gekqC+TpStmkMKtfk2ThFxMi3SEEWvo1uTzoL+pQJQBXg1/4VwL7gl//W4HOAH5P8J9S5BM8U93LSxFgZYDIRPCfU85vg5ysEOhE8Fxkd4k/GNzL/GBXgXwee3FclPERJ7AaF9lb4o/Hvppyng715ZJwChM4VDprYy1inE05jeJ9GFyrEUhhLnzfqajj+TD6jpNDBD8jm0fbOFVn/KAgcl11utqySfsjfO43uU0LD/V7fg03ZEUdl3XOAdzCq4LdvSbBi7iADX/Op/LawOlhg+cYwSXZk7kum7BbsjacxzlDPJk7E78BiCOJMrCO34wAAAAASUVORK5CYII=") center center/cover;
-    background-size: 25px 25px;
-    width: 25px;
-    height: 25px;
+    display: flex;
+    margin-right: 3px;
 }
 
 /* Hitory and Memory Part */
@@ -259,7 +257,7 @@ html,body{
 
 #mbots .mss:hover
 ,.mns:hover
-,.mpl:hover{border: .5px solid gray;}
+,.mpl:hover{border: .5px solid gray; background: var(--color-hover);}
 
 #mbots .mc,.mr,.mfsh{
     border: none;
@@ -274,11 +272,9 @@ html,body{
 .mainbots{
     grid-area: buttons;
     display: grid;  
-    grid-gap: 3px;
+    grid-gap: 2px;
     height: 100%;
     width: 100%;
-    font-weight: 700;
-    font-size: bold;
     background: var(--color-primary);
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(6,1fr);
@@ -290,6 +286,10 @@ html,body{
     'one two three jam'
     'jata zero dott ms'
     ;
+}
+
+.part1{
+    font-weight: 700;
 }
 
 .mainbots div{
@@ -478,10 +478,9 @@ html,body{
     .mainbots{
         grid-area: buttons;
         display: grid;  
-        grid-gap: 3px;
+        grid-gap: 2px;
         height: 100%;
         width: 100%;
-        font-weight: 700;
         font-size: bold;
         background: var(--color-primary);
         grid-template-columns: repeat(4,1fr);
@@ -495,6 +494,10 @@ html,body{
         'jata zero dott ms'
         ;
     } 
+
+    .part1{
+        font-weight: 700;
+    }
     
 }
 
@@ -531,32 +534,47 @@ html,body{
 
     #result{
         padding-right: 8px;
-        bottom: -5px;
-        font-size: 30px;
+        margin-top: 17px;
+        bottom: -10px;
+        font-size: 35px;
     }
 
     .close:hover{
-        height: 20px;
-        justify-content: center;
+        height: 23px;
     }
 
     .window:hover{
-        height: 20px;
+        height: 23px;
     }
 
     .underline:hover{
-        height: 20px;
+        height: 23px;
     }
 
     .clockbt{
         display: flex;
         cursor: pointer;
-        padding: 0px 2px 4px 2px;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        width: 30px;
+        margin-right: 3px;
+        margin-top: 3px;
+        font-size: 10px;
     }
+
     .clockbt:hover{
         border: 1px solid silver;
         background: var(--color-hover);
     }
+
+    .clock-icon{
+        height: 30px;
+        width: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+
     #mbots{
         width: 100vw;
         max-width: unset;
@@ -564,5 +582,4 @@ html,body{
     .mfsh{
         display: flex;
     }
-    
 }
