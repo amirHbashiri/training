@@ -257,15 +257,12 @@ html,body{
 
 #mbots .mss:hover
 ,.mns:hover
-,.mpl:hover{border: .5px solid gray; background: var(--color-hover);}
+,.mpl:hover{background: var(--color-hover);}
 
 #mbots .mc,.mr,.mfsh{
     border: none;
     color: #818181;
-}
-
-#mbots .mc:hover
-,.mr:hover{border: .5px solid gainsboro;}
+} 
 
 /* mainbotts grid */
 
